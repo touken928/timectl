@@ -1,0 +1,40 @@
+# Publish wheels/sdist to PyPI when a version tag is pushed (e.g. v0.1.0).
+#
+# One-time PyPI setup (Trusted Publishing, no API token in GitHub secrets):
+# https://docs.pypi.org/trusted-publishers/
+# - PyPI → your project → Settings → Publishing → Add a new pending publisher
+# - Owner: touken928, Repository: timectl, Workflow: publish.yml, Environment: (leave blank)
+#
+# If you prefer a token instead, remove id-token permission and set:
+#   with:
+#     password: ${{ secrets.PYPI_API_TOKEN }}
+# (see https://github.com/pypa/gh-action-pypi-publish)
+
+name: Publish to PyPI
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.10"
+
+      - name: Build sdist and wheel
+        run: uv build
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: dist/

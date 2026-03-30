@@ -7,7 +7,7 @@ from .settime import add_set_parser, run_set
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="timewarp")
+    parser = argparse.ArgumentParser(prog="timectl")
     subparsers = parser.add_subparsers(dest="command", required=True)
     add_inspect_parser(subparsers)
     add_set_parser(subparsers)

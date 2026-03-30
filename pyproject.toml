@@ -1,7 +1,7 @@
 [project]
-name = "timewarp"
+name = "timectl"
 version = "0.1.0"
-description = "Add your description here"
+description = "CLI to inspect and set file timestamps (atime, mtime, btime, and best-effort ctime)."
 readme = "README.md"
 authors = [
     { name = "Touken", email = "touken928@foxmail.com" }
@@ -10,7 +10,7 @@ requires-python = "==3.10.*"
 dependencies = []
 
 [project.scripts]
-timewarp = "timewarp:main"
+timectl = "timectl:main"
 
 [build-system]
 requires = ["uv_build>=0.11.1,<0.12.0"]

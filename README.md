@@ -1,4 +1,4 @@
-# timewarp
+# timectl
 
 Command-line tool to inspect and adjust file and directory timestamps (`atime`, `mtime`, `btime`, and best-effort `ctime`).
 
@@ -13,25 +13,25 @@ Command-line tool to inspect and adjust file and directory timestamps (`atime`, 
 **Recommended:** add the CLI from PyPI with uv’s tool installer (see [Using tools](https://docs.astral.sh/uv/guides/tools/)):
 
 ```bash
-uv tool install timewarp
-timewarp --help
+uv tool install timectl
+timectl --help
 ```
 
 To run a one-off command without installing the tool globally, use [`uvx`](https://docs.astral.sh/uv/guides/tools/) (alias for `uv tool run`):
 
 ```bash
-uvx timewarp --help
-uvx timewarp inspect .
+uvx timectl --help
+uvx timectl inspect .
 ```
 
 You can also install from PyPI with pip:
 
 ```bash
-pip install timewarp
-timewarp --help
+pip install timectl
+timectl --help
 ```
 
-To work on this repository from a clone, use `uv sync` and `uv run timewarp …`.
+To work on this repository from a clone, use `uv sync` and `uv run timectl …`.
 
 ## Commands
 
@@ -40,8 +40,8 @@ To work on this repository from a clone, use `uv sync` and `uv run timewarp …`
 Show `atime`, `mtime`, `ctime`, and `btime` (when available) for a single path. Times are printed in the system local timezone.
 
 ```bash
-timewarp inspect              # default: current directory
-timewarp inspect path/to/file
+timectl inspect              # default: current directory
+timectl inspect path/to/file
 ```
 
 ### `set`
@@ -49,7 +49,7 @@ timewarp inspect path/to/file
 Update timestamps for **one** root path (default: current directory). By default, **directories are processed recursively** (all entries under the tree).
 
 ```bash
-timewarp set [path] [--time <value>] [--fields <letters>] [--no-recursive]
+timectl set [path] [--time <value>] [--fields <letters>] [--no-recursive]
 ```
 
 | Option | Description |
@@ -76,19 +76,19 @@ timewarp set [path] [--time <value>] [--fields <letters>] [--no-recursive]
 
 ```bash
 # Inspect a file
-timewarp inspect ./README.md
+timectl inspect ./README.md
 
 # Set everything to now under current directory (default path, --time, --fields)
-timewarp set
+timectl set
 
 # Set everything to now under a given root
-timewarp set ./some/dir
+timectl set ./some/dir
 
 # Set atime/mtime/btime to a fixed time (omit c)
-timewarp set ./file.txt --time "2026-03-30 22:00:00" --fields amb
+timectl set ./file.txt --time "2026-03-30 22:00:00" --fields amb
 
 # Only touch the directory itself, not children
-timewarp set ./folder --no-recursive --time now
+timectl set ./folder --no-recursive --time now
 ```
 
 ## Limitations
