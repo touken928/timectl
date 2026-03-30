@@ -1,0 +1,17 @@
+[project]
+name = "timewarp"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Touken", email = "touken928@foxmail.com" }
+]
+requires-python = "==3.10.*"
+dependencies = []
+
+[project.scripts]
+timewarp = "timewarp:main"
+
+[build-system]
+requires = ["uv_build>=0.11.1,<0.12.0"]
+build-backend = "uv_build"
