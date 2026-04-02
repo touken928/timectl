@@ -1,6 +1,15 @@
-# timectl
+<h1 align="center">timectl</h1>
 
-Command-line tool to inspect and adjust file and directory timestamps (`atime`, `mtime`, `btime`, and best-effort `ctime`).
+<p align="center">
+  <strong>Command-line tool to inspect and adjust file and directory timestamps (<code>atime</code>, <code>mtime</code>, <code>btime</code>, and best-effort <code>ctime</code>).</strong>
+</p>
+
+<p align="center">
+  <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.10-blue.svg?style=for-the-badge&logo=python" alt="Python 3.10"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=for-the-badge" alt="License: Apache 2.0"></a>
+  <a href="https://pypi.org/project/timectl/"><img src="https://img.shields.io/pypi/v/timectl.svg?style=for-the-badge&logo=pypi&logoColor=white&label=pypi" alt="PyPI version"></a>
+  <a href="https://github.com/touken928/timectl/stargazers"><img src="https://img.shields.io/github/stars/touken928/timectl?style=for-the-badge&color=yellow&logo=github" alt="GitHub stars"></a>
+</p>
 
 > **Testing:** This project has **only been tested on macOS 26**. Behavior on other operating systems or versions is not guaranteed.
 
